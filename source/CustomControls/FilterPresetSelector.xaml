@@ -14,31 +14,9 @@
                 <ControlTemplate TargetType="CheckBoxEx">
                     <Grid Background="Transparent" Margin="0,0,0,0">
                         <!--PLATFORM BACKGROUNDS-->
-                        <TextBlock Name="BackgroundPathModifier" Tag="{Binding Name}" Visibility="Collapsed">
-                            <TextBlock.Style>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="Text">
-                                        <Setter.Value>
-                                            <MultiBinding StringFormat="{}{0}{1}{2}{3}">
-                                                <Binding ElementName="ThemeModifierImagePath" Path="Tag" />
-                                                <Binding Source="/FilterPresets/PlatformBackgrounds/"/>
-                                                <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                                                <Binding Source=".jpg"/>
-                                            </MultiBinding>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+                        
                         <Grid x:Name="BackgroundBorder" Opacity="0" HorizontalAlignment="Stretch">
-                            <Border Background="{DynamicResource ControlBackgroundDarkBrush}" Height="80" CornerRadius="10" VerticalAlignment="Top"/>
-                            <Border Background="{DynamicResource MainBackgourndBrush}" CornerRadius="10" VerticalAlignment="Stretch" Margin="0,80,0,0"/>
-                            <Border VerticalAlignment="Stretch" CornerRadius="10" Margin="0,80,0,0">
-                                <Border.Background>
-                                    <ImageBrush Stretch="UniformToFill" RenderOptions.BitmapScalingMode="Fant" ImageSource="{Binding ElementName=BackgroundPathModifier, Path=Text}"/>
-                                </Border.Background>
-                            </Border>
-                            <Border Background="{DynamicResource OverlayFilterPresets}" CornerRadius="10" VerticalAlignment="Stretch" Margin="0,80,0,0"/>
+
                         </Grid>
 
                         <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
@@ -72,8 +50,7 @@
                                                     </Style>
                                                 </TextBlock.Style>
                                             </TextBlock>
-                                            <Image Name="LogoImage" MaxWidth="30" MaxHeight="30" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" Margin="5,0,0,0"
-                                                   VerticalAlignment="Center" HorizontalAlignment="Left" Source="{Binding ElementName=LogoPath, Path=Text}"/>
+                                            
                                         </Grid>
 							            <Grid x:Name="ThemeModifierPath" Tag="{DynamicResource DKGThemeModifierPath}">
                                             <Grid.Style>
@@ -105,64 +82,7 @@
                                             <Image Name="LogoImageModifier" MaxWidth="100" MaxHeight="50" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" Margin="5,0,0,0"
                                                    VerticalAlignment="Center" HorizontalAlignment="Left" Source="{Binding ElementName=LogoPathModifier, Path=Text}"/>
                                         </Grid>
-                                                                    
-                                        <Grid Tag="{DynamicResource DKGThemeModifierPath}">
-                                            <Grid.Style>
-                                               <Style TargetType="Grid">
-                                                   <Setter Property="Visibility" Value="Collapsed"/>
-                                                   <Style.Triggers>
-                                                       <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value=".">
-                                                           <Setter Property="Visibility" Value="Visible"/>
-                                                       </DataTrigger>
-                                                   </Style.Triggers>
-                                               </Style>
-                                            </Grid.Style>
-                                            <TextBlock FontSize="25" Foreground="White" Margin="7.5,0,0,0"
-                                                       HorizontalAlignment="Left" VerticalAlignment="Center">
-                                                <TextBlock.Style>
-                                                    <Style TargetType="TextBlock">
-                                                        <Setter Property="Visibility" Value="Collapsed"/>
-                                                        <Setter Property="Text" Value="{Binding Name}"/>
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding ElementName=LogoImageModifier, Path=ActualHeight}" Value="0">
-                                                                <Setter Property="Visibility" Value="Visible"/>
-                                                            </DataTrigger>
-                                                            <DataTrigger Binding="{Binding ElementName=FilterPresets, Path=IsKeyboardFocusWithin}" Value="True">
-                                                                <Setter Property="Text" Value="&#59633;"/>
-                                                                <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </TextBlock.Style>
-                                            </TextBlock>
-                                        </Grid>
-                                        
-                                        <Grid Tag="{DynamicResource DKGThemeModifierPath}">
-                                            <Grid.Style>
-                                               <Style TargetType="Grid">
-                                                   <Setter Property="Visibility" Value="Visible"/>
-                                                   <Style.Triggers>
-                                                       <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value=".">
-                                                           <Setter Property="Visibility" Value="Collapsed"/>
-                                                       </DataTrigger>
-                                                   </Style.Triggers>
-                                               </Style>
-                                            </Grid.Style>
-                                            <TextBlock FontSize="30" Foreground="White" Margin="7.5,0,0,0" 
-                                                       HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" TextTrimming="CharacterEllipsis">
-                                                <TextBlock.Style>
-                                                    <Style TargetType="TextBlock">
-                                                        <Setter Property="Visibility" Value="Collapsed"/>
-                                                        <Setter Property="Text" Value="{Binding Name}"/>
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding ElementName=LogoImageModifier, Path=ActualHeight}" Value="0">
-                                                                <Setter Property="Visibility" Value="Visible"/>
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </TextBlock.Style>
-                                            </TextBlock>
-                                        </Grid>
+
                                     </Grid>
                                 </StackPanel>
                             </Grid>
@@ -188,27 +108,7 @@
                                 </TextBlock.Style>
                             </TextBlock>
 
-                            <Border Background="{DynamicResource MainBackgourndBrush}" Width="1000" Height="80" CornerRadius="10" VerticalAlignment="Top"/>
-                            <Border Width="1000" Height="80" HorizontalAlignment="Left" VerticalAlignment="Top" Tag="{DynamicResource DKGThemeModifierPath}">
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="Visibility" Value="Visible"/>
-                                        <Setter Property="CornerRadius" Value="10"/>
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value=".">
-                                                <Setter Property="Visibility" Value="Collapsed"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Border.Style>
-                                <Border.Effect>
-                                    <DropShadowEffect BlurRadius="20"/>
-                                </Border.Effect>
-                                <Border.Background>
-                                    <ImageBrush x:Name="ColourModifier" ImageSource="{Binding ElementName=ColourPathModifier, Path=Text}"
-                                                Stretch="Fill" RenderOptions.BitmapScalingMode="Fant"/>
-                                </Border.Background>
-                            </Border>
+                            
                             <Grid>
                                 <Grid Background="Transparent" Width="480" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,209,0,0">
                                     <Grid.Style>
@@ -243,7 +143,7 @@
                                                             <Binding ElementName="ThemeModifierPath" Path="Tag" />
                                                             <Binding Source="/FilterPresets/PlatformTrailers/"/>
                                                             <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                                                            <Binding Source=".mp4"/>
+                                                            <Binding Source=".zzz"/>
                                                         </MultiBinding>
                                                     </Setter.Value>
                                                 </Setter>
@@ -253,7 +153,7 @@
                                     <MediaElement MediaElementBehaviors.Repeat="True" x:Name="VideoSource" Stretch="Uniform" Height="272">
                                         <MediaElement.Style>
                                             <Style TargetType="MediaElement">
-                                                <Setter Property="Volume" Value="0"/>
+                                                <Setter Property="Volume" Value="100"/>
                                                 <Setter Property="MediaElement.Source" Value="{Binding ElementName=VideoPath, Path=Text}"/>
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=IsActive}" Value="False">
@@ -276,27 +176,7 @@
                                             </Style.Triggers>
                                         </Style>
                                     </Grid.Style>
-                                    <Grid.Effect>
-                                        <DropShadowEffect BlurRadius="20"/>
-                                    </Grid.Effect>
-                                    <TextBlock Name="ImagePathModifier" Tag="{Binding Name}" Visibility="Collapsed">
-                                        <TextBlock.Style>
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Text">
-                                                    <Setter.Value>
-                                                        <MultiBinding StringFormat="{}{0}{1}{2}{3}">
-                                                            <Binding ElementName="ThemeModifierImagePath" Path="Tag" />
-                                                            <Binding Source="/FilterPresets/PlatformImages/"/>
-                                                            <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                                                            <Binding Source=".png"/>
-                                                        </MultiBinding>
-                                                    </Setter.Value>
-                                                </Setter>
-                                            </Style>
-                                        </TextBlock.Style>
-                                    </TextBlock>
-                                    <Image Name="ImageModifier" Width="900" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" Margin="0,85,0,0"
-                                                   VerticalAlignment="Top" HorizontalAlignment="Center" Source="{Binding ElementName=ImagePathModifier, Path=Text}"/>
+                                    
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -344,20 +224,7 @@
                                             </Style.Triggers>
                                         </Style>
                                     </Grid.Style>
-                                    <TextBlock FontSize="45" Foreground="White" Margin="7.5,0,0,0" 
-                                                       HorizontalAlignment="Left" VerticalAlignment="Center" Width="800" TextTrimming="CharacterEllipsis">
-                                        <TextBlock.Style>
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Visibility" Value="Collapsed"/>
-                                                <Setter Property="Text" Value="{Binding Name}"/>
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding ElementName=LogoImageModifier, Path=ActualHeight}" Value="0">
-                                                        <Setter Property="Visibility" Value="Visible"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </TextBlock.Style>
-                                    </TextBlock>
+
                                 </Grid>
 
                                 <Grid Tag="{DynamicResource DKGThemeModifierPath}">
@@ -371,32 +238,13 @@
                                             </Style.Triggers>
                                         </Style>
                                     </Grid.Style>
-                                    <TextBlock FontSize="45" Foreground="White" Margin="7.5,0,0,0" 
-                                                       HorizontalAlignment="Left" VerticalAlignment="Center" Width="800" TextTrimming="CharacterEllipsis">
-                                        <TextBlock.Style>
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Visibility" Value="Collapsed"/>
-                                                <Setter Property="Text" Value="{Binding Name}"/>
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding ElementName=LogoImageModifier, Path=ActualHeight}" Value="0">
-                                                        <Setter Property="Visibility" Value="Visible"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </TextBlock.Style>
-                                    </TextBlock>
                                 </Grid>
                             </Grid>
                             
                             <Grid DockPanel.Dock="Top" HorizontalAlignment="Left"
                               Margin="0,10,0,0">
                                 <StackPanel>
-                                    <TextBlock Text="{Binding Name}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="52"
-                                           Width="900" TextTrimming="CharacterEllipsis">
-                                        <TextBlock.Effect>
-                                            <DropShadowEffect BlurRadius="10"/>
-                                        </TextBlock.Effect>
-                                    </TextBlock>
+
                                     <!--TextBlock Text="{Binding ElementName=VideoSource, Path=ActualWidth}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="42" Foreground="{DynamicResource ControlBackgroundDarkBrush}"
                                            Width="500" Height="75" TextTrimming="CharacterEllipsis"/-->                                    
                                 </StackPanel>
@@ -435,48 +283,9 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <Grid DockPanel.Dock="Top" HorizontalAlignment="Left" Width="300" Margin="0,10,0,10">
-                                <Grid.Style>
-                                    <Style TargetType="Grid">
-                                        <Setter Property="Height" Value="300"/>
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding ElementName=PlatformScreenshot, Path=ActualWidth}" Value="0">
-                                                <Setter Property="Height" Value="0"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Grid.Style>
-                                <Image x:Name="PlatformScreenshot" Stretch="UniformToFill" RenderOptions.BitmapScalingMode="Fant" Height="300"
-                                       Source="{Binding ElementName=PlatformScreenshotPathModifier, Path=Text}"
-                                       VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.8"/>
-                                <Grid>
-                                    <Grid.Effect>
-                                        <DropShadowEffect BlurRadius="10"/>
-                                    </Grid.Effect>
-                                    <Image Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" MaxWidth="250"
-                                       Source="{Binding ElementName=PlatformLogoPathModifier, Path=Text}"/>
-                                </Grid>
-                                <Border  BorderBrush="#4DFFFFFF" BorderThickness="2" Opacity="0.8" Height="300" Width="300"/>
-                            </Grid>
                             
 
-                            <Grid x:Name="InfoBox" DockPanel.Dock="Top" HorizontalAlignment="Left"
-                                  Margin="0,0,0,10" Width="800">
-                                <Grid Width="165" HorizontalAlignment="Left">
-                                    <Border Background="{DynamicResource ControlBackgroundDarkBrush}" CornerRadius="10"/>
-                                    <Border CornerRadius="10">
-                                        <Border.Background>
-                                            <ImageBrush ImageSource="{Binding ElementName=ColourPathModifier, Path=Text}"/>
-                                        </Border.Background>
-                                    </Border>
-                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0,0,0">
-                                        <TextBlock Text="{DynamicResource LOCSelect}" Style="{DynamicResource TextBlockBaseStyle}" 
-                                                       FontFamily="Segoe UI Semibold" VerticalAlignment="Center"/>
-                                        <ContentControl ContentTemplate="{DynamicResource ButtonPromptA}" Height="40" Focusable="False"
-                                                                Foreground="#FFEBEBEB" VerticalAlignment="Center" Margin="15,20,0,20"/>
-                                    </StackPanel>
-                                </Grid>
-                            </Grid>
+
                         </DockPanel>
 
                         <Grid x:Name="Arrow" VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -485,27 +294,11 @@
                                     <Setter Property="Visibility" Value="Collapsed"/>
                                     <Setter Property="Opacity" Value="0"/>
                                     <Setter Property="Margin" Value="0,0,0,100"/>
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementName=FilterPresets, Path=IsKeyboardFocusWithin}" Value="True">
-                                            <DataTrigger.EnterActions>
-                                                <BeginStoryboard>
-                                                    <Storyboard RepeatBehavior="Forever">
-                                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.2"/>
-                                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" BeginTime="0:0:1.8" Duration="0:0:0.2"/>
-                                                        <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,100" To="0,0,0,0" Duration="0:0:1.8"/>
-                                                    </Storyboard>
-                                                </BeginStoryboard>
-                                            </DataTrigger.EnterActions>
-                                        </DataTrigger>
-                                    </Style.Triggers>
+
                                 </Style>
                             </Grid.Style>
                             <StackPanel>
-                                <TextBlock 	Foreground="#FFEBEBEB"
-									HorizontalAlignment="Center"
-									VerticalAlignment="Center"                           
-									Text="&#xea5b;" FontFamily="{StaticResource FontIcoFont}" FontSize="72" 
-                                    x:Name="Arrow1"/>
+
                             </StackPanel>                            
                         </Grid>
                     </Grid>
@@ -525,9 +318,7 @@
                         </Trigger>
 
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Opacity" Value="1"/>
-                            <Setter Property="FontWeight" Value="Bold" TargetName="TextContent" />
-                            <Setter Property="FontSize" Value="{DynamicResource FilterFontLarge}"/>
+
                             <Setter Property="Opacity" TargetName="BackgroundBorder" Value="1"/>
                             <Setter Property="Visibility" TargetName="InfoDetails" Value="Visible"/>
                             <Setter Property="Visibility" TargetName="InfoMedia" Value="Visible"/>
