@@ -6,10 +6,10 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     mc:Ignorable="d">
 
-    <sys:Boolean x:Key="UseAbsoluteExtraMetadataPath">false</sys:Boolean>
-    <sys:String x:Key="ExtraMetadataPath">..\..\..\..</sys:String>
+    <sys:Boolean x:Key="UseAbsoluteExtraMetadataPath">true</sys:Boolean>
+    <sys:String x:Key="ExtraMetadataPath">C:\Users\krypt\AppData\Roaming\Playnite</sys:String>
     <!--sys:String x:Key="ExtraMetadataPath">C:\Users\david\AppData\Roaming\Playnite</sys:String-->
-	<sys:String x:Key="DKGThemeModifierPath">.</sys:String>
+	<sys:String x:Key="DKGThemeModifierPath">C:\Users\krypt\AppData\Roaming\Playnite\DKGThemeModifier</sys:String>
 	<!--sys:String x:Key="DKGThemeModifierPath">C:\Users\david\AppData\Roaming\Playnite\DKGThemeModifier</sys:String-->
 	<sys:String x:Key="DKGThemeModifierAutoDownloadMedia">.</sys:String>
 
@@ -80,13 +80,13 @@
     <sys:Boolean x:Key="VideoCovers">true</sys:Boolean>
 
     <!--VideoBackgrounds-->
-    <sys:Boolean x:Key="VideoBackgrounds">false</sys:Boolean>
+    <sys:Boolean x:Key="VideoBackgrounds">true</sys:Boolean>
 
     <!--Trailers-->
     <sys:Boolean x:Key="Trailers">true</sys:Boolean>
 
     <!--SideBar-->
-    <sys:Boolean x:Key="SideBar">true</sys:Boolean>
+    <sys:Boolean x:Key="SideBar">false</sys:Boolean>
 
     <!--DFS--><sys:Double x:Key="DescriptionFont">18</sys:Double><!--DFS-->
 
@@ -98,9 +98,10 @@
 
     <sys:Boolean x:Key="DropShadows">false</sys:Boolean>
 
-    <!--LGH--><sys:Double x:Key="ListGamesHeight">600</sys:Double><!--LGH-->
+    <!--LGH--><sys:Double x:Key="ListGamesHeight">512</sys:Double><!--LGH-->
 
-    <sys:Boolean x:Key="PlatformImageBackgrounds">false</sys:Boolean>
+    <sys:Boolean x:Key="PlatformImageBackgrounds">true</sys:Boolean>
+    <sys:Boolean x:Key="PlatformImageBackgroundsV">true</sys:Boolean>
 
     <!--FPW--><sys:Double x:Key="FilterWidth">1920</sys:Double><!--FPW-->
 
@@ -110,7 +111,7 @@
     <Color x:Key="GlyphLightColor">#00BAAF</Color>
     <Color x:Key="SelectionLightColor">#FF8D919D</Color>
     <Color x:Key="OverlayColor">#BB000000</Color>
-    <Color x:Key="UIColour">#00BAAF</Color>
+    <Color x:Key="UIColour">#EB8C10</Color>
 
     <Color x:Key="ControlBackgroundColor">#303030</Color>
     <Color x:Key="ControlBackgroundColorDark">#202020</Color>
